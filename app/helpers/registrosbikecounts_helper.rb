@@ -1,0 +1,2 @@
+module RegistrosbikecountsHelper
+end

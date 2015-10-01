@@ -1,0 +1,68 @@
+<p id="notice"><%= notice %></p>
+
+  <nav>
+    <div class="nav-wrapper">
+        <nav class="deep-purple">
+      <a href="#" class="brand-logo center">RegBikeCount</a>
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+        <li><a href="#tabela">Projeto</a></li>
+        <li><a href="#tabela">Registros</a></li>
+        <li><a href="#tabela">Sobre</a></li>
+      </ul>
+    </div>
+  </nav>
+        
+<table class="highlight">
+    <div class="parallax-container">
+      <div class="parallax"><img src="/assets/fundo_inicial2.jpg"></div>
+    </div>
+  <thead>
+    <tr>
+      <th>Dia</th>
+      <th>Hora</th>
+      <th>Velocidade (Km/h)</th>
+      <th>Tipo</th>
+      <th>Peso (Aproximado)</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <br/>
+    <a name="tabela"></a>
+    <% @registrosbikecounts.each do |registrosbikecount| %>
+      <tr>
+        <td><%= registrosbikecount.dia %></td>
+        <td><%= registrosbikecount.hora %></td>
+        <td><%= registrosbikecount.velocidade%></td>
+
+        <% if registrosbikecount.tipo == 0 %>
+            <td>
+              <div class="chip">
+                <img src="/assets/pedestre.png">
+              </div>
+            </td> 
+         <% else %>
+           <td>
+              <div class="chip">
+                <img src="/assets/ciclista.png">
+              </div>
+            </td> 
+         <%end%>
+        <td><%= registrosbikecount.pressao %></td>
+
+        <!--
+        #<td><%= link_to 'Show', registrosbikecount %></td>
+        #<td><%= link_to 'Edit', edit_registrosbikecount_path(registrosbikecount) %></td> -->
+        <td><%= link_to 'Destroy', registrosbikecount, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+        
+      </tr>
+    <% end %>    
+  </tbody>
+
+</table>
+
+
+
+
+<!--<%= link_to 'New Registrosbikecount', new_registrosbikecount_path %>-->
