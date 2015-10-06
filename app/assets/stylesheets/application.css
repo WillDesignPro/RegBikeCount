@@ -15,14 +15,55 @@
  *= require_self
  */
 
- .parallax-container {
-      height: 600px;
+.parallax-container {
+    height: 600px;
  }
 
- .chip img {
+.chip img {
  	display: block;
  	margin-left: 10%;
  	margin-right: 10%;
  }
+ 
+ .apresentation-group {
+	width: 100%;
+	background-color: transparent;
+	background: transparent url("../assets/fundo_sobre.jpg") no-repeat scroll 0% 0% / cover;
+	opacity: 0.95;
+	height: 600px;
+	padding: 2%;
+	text-align: center;
+	color: white;
+	text-shadow: 2px 2px 1px black;
+	font-size: 19px;
+}
 
+ .apresentation-group-project {
+	width: 100%;
+	background-color: transparent;
+	background: transparent url("../assets/imagem_2.jpg") no-repeat scroll 0% 0% / cover;
+	height: 600px;
+	padding: 7%;
+	text-align: center;
+	color: white;
+	text-shadow: 2px 2px 1px black;
+	opacity: 1;
+	font-size: 19px;
+}
+.logo_unisep img {
+    display: block !important;
+    min-width: 50%;
+	min-height: 50%;
+	max-width: 400px;
+	max-height: 300px;
+	margin-left: 200px;
+}
 
+.logo_inventto img {
+    display: block !important;
+    min-width: 50%;
+	min-height: 50%;
+	max-width: 400px;
+	max-height: 400px;
+	margin-left: 190px;
+}

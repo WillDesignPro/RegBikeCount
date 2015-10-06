@@ -5,16 +5,18 @@
         <nav class="deep-purple">
       <a href="#" class="brand-logo center">RegBikeCount</a>
       <ul id="nav-mobile" class="left hide-on-med-and-down">
-        <li><a href="#tabela">Projeto</a></li>
-        <li><a href="#tabela">Registros</a></li>
-        <li><a href="#tabela">Sobre</a></li>
+        <li><a href="#tabela"><b>Registros</a></li>
+        <li><a href="#projeto">Projeto</a></li>
+        <li><a href="#sobre">Sobre</a></li>
       </ul>
     </div>
   </nav>
-        
+      
 <table class="highlight">
     <div class="parallax-container">
-      <div class="parallax"><img src="/assets/fundo_inicial2.jpg"></div>
+      <div class="parallax">
+        <img src="/assets/fundo_inicial2.jpg">
+      </div>
     </div>
   <thead>
     <tr>
@@ -49,18 +51,108 @@
             </td> 
          <%end%>
         <td><%= registrosbikecount.pressao %></td>
-
         <!--
         #<td><%= link_to 'Show', registrosbikecount %></td>
         #<td><%= link_to 'Edit', edit_registrosbikecount_path(registrosbikecount) %></td> -->
         <td><%= link_to 'Destroy', registrosbikecount, method: :delete, data: { confirm: 'Are you sure?' } %>
         </td>
-        
       </tr>
     <% end %>    
-  </tbody>
-
 </table>
+
+<br/>
+<br/> 
+
+<nav>
+   <div class="nav-wrapper">
+       <nav class="deep-purple">
+        <a href="#" class="brand-logo Left">Projeto...</a>
+        <a name="projeto"></a>
+  </div>
+</nav>
+
+
+<div class="parallax-container">
+  <div class="parallax">
+    <div class="apresentation-group-project">
+        <div class="row">
+            <div class="col s6 offset">
+            <p>
+              <br/>
+              <b>
+                O projeto surgiu pela Inventto, e está servindo como projeto de estágio para mim (Will).
+              <br/> 
+                Espero que essa aplicação seja muito útil a você que está fazendo uso, espero que possa aproveitar ao máximo e desfrutar do resultado de todo o esforço e estudo que eu e o pessoal da Inventto investimos nesse trabalho.  
+              <br/>
+              <br/>
+                Com a missão de lhe fornecer informações sobre o uso das ciclovias e demonstrar que existe interesse em automação aqui na cidade, e que ela pode ser aplicada em qualquer lugar é que fizemos a aplicabilidade desse processo automatizado de registros de ciclistas/pedrestres.
+              <br/>
+              Bom proveito =)
+              <br/>
+              <br/>
+                Willian Ribeiro Ludvig
+              </b>
+            </p>
+          </div>
+         </div>
+       </div>
+      </div>
+    </div>
+
+
+
+
+  <nav>
+    <div class="nav-wrapper">
+        <nav class="deep-purple">
+          <a href="#" class="brand-logo Left">Sobre...</a>
+          <a name="sobre"></a>
+    </div>
+  </nav>
+
+  <div class="parallax-container">
+    <div class="imagens">
+      <div class="apresentation-group">
+          <div class="row">
+              <div class="col s6 offset">
+              <p>
+                <b>
+                  Que tal ter um contador de bicicletas em sua cidade? <br/>
+                  Legal né?
+                <br/>
+                  Pois bem, isso é possível graças ao empreendedorismo e ao esforço de algumas pessoas.
+                <br/>
+                  Pessoas essas com foco na inovação e vontade de tornar a cidade cada vez melhor para você, que circula de bicicleta ou a pé mesmo, afinal saúde não se mede, se avalia, ou você tem ou não tem.
+                <br/>
+                  E por que não ter saúde?
+                <br/>
+                  A cada dia mais e mais pessoas circulam com carros pelas grandes cidades, e aqui em Beltrão mesmo, com isso cada vez temos mais congestionamentos, mais riscos e menos tempo.
+                <br/>
+                  Pensando nisso foram criadas as ciclovias, para que as pessoas possam desfrutar de suas atividades fisícas com mais segurança, e por que não reduzir o uso do automóvel e aumentar o uso da bicicleta?
+                <br/>
+                  Pense nisso...
+                <br/>
+                <br/>
+                  Willian Ribeiro Ludvig
+                </b>
+              </p>
+              </div>
+              <div class="col s6 offset">
+              <br/>
+              <div class="logo_inventto">
+                    <a href="http://invent.to/"><img src="/assets/inventto_new_black.png"></a>
+                </div>
+                    <br/>                
+                <div class="logo_unisep">
+                    <a href="http://www.unisep.edu.br/abertura.php"><img src="/assets/unisep_logo_black.png"></a>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</tbody> 
+
 
 
 
