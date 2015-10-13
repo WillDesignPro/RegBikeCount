@@ -2,7 +2,10 @@ Rails.application.routes.draw do
   resources :registrosbikecounts
 
   match '/novo_registro/:teste' => "registrosbikecounts#regbikecount", via: [:get, :post]
+  match '/retornodata' => "registrosbikecounts#retornodata", via: [:get]
+  #match é o guia, '/retornodata' é o nome da URL, seguida do método 
 
+  # root :to => "/registrosbikecounts"
 
 
 

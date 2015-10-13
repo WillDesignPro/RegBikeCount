@@ -93,7 +93,8 @@ class RegistrosbikecountsController < ApplicationController
 
   def retornodata
     tempo = Time.now
-    tempo.to_i
+    tempo = tempo.to_i
+    render :text => tempo.to_s
   end
 
   private
