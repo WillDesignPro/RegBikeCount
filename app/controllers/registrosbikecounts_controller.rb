@@ -91,6 +91,11 @@ class RegistrosbikecountsController < ApplicationController
 
   end
 
+  def retornodata
+    tempo = Time.now
+    tempo.to_i
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_registrosbikecount
