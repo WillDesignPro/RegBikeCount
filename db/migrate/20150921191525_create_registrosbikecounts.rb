@@ -1,11 +1,10 @@
-class CreateRegistrosbikecounts < ActiveRecord::Migration
+class CreateStepCounters < ActiveRecord::Migration
   def change
-    create_table :registrosbikecounts do |t|
-      t.date :dia
-      t.string :hora
-      t.integer :tipo
-      t.decimal :velocidade
-      t.decimal :pressao
+    create_table :step_counters do |t|
+      t.datetime :date
+      t.integer :kind
+      t.decimal :speed
+      t.decimal :pressure
 
       t.timestamps null: false
     end
