@@ -12,9 +12,10 @@ class StepCounterService
   private
 
   def calculate_kind
-    if pressure_kpa > 300 && pressure_kpa <= 400
+    binding.pry
+    if @pressure_kpa > 300 && @pressure_kpa <= 400
       0
-    elsif pressure_kpa > 400 && pressure_kpa < 600
+    elsif @pressure_kpa > 400 && @pressure_kpa < 600
       1
     end
   end
@@ -22,7 +23,7 @@ class StepCounterService
   def calculate_height
     const = 9.806
 
-    pressure_pascal = pressure_kpa * 0.001
+    pressure_pascal = @pressure_kpa * 0.001
     pressure_newtons = pressure_pascal * 2.4
 
     pressure_newtons + const

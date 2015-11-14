@@ -1,11 +1,7 @@
-<p id="notice">
-  <%= notice %>
-</p>
-
 <nav>
   <div class="nav-wrapper">
     <div class="deep-purple">
-      <a href="#" class="brand-logo center">RegBikeCount</a>
+      <a href="#" class="brand-logo center">Register Bikes Counter</a>
       <ul id="nav-mobile" class="left hide-on-med-and-down">
         <li><a href="#tabela"><b>Registros</b></a></li>
         <li><a href="#projeto"><b>Projeto</b></a></li>
@@ -15,37 +11,39 @@
   </div>
 </nav>
 
-<table class="highlight">
-  <div class="parallax-container">
-    <div class="parallax">
-      <img src="/assets/fundo_inicial2.jpg">
-    </div>
+<div class="parallax-container">
+  <div class="parallax">
+    <%= image_tag 'fundo_inicial2.jpg' %>
   </div>
-  <thead>
-    <tr>
-      <th>Dia</th>
-      <th>Hora</th>
-      <th>Tipo</th>
-      <th>Peso (Aproximado)</th>
-    </tr>
-  </thead>
+</div>
 
-  <tbody>
-    <% @step_counters.each do |step_counter| %>
+<div class="container">
+  <a name="tabela"></a>
+  <table class="highlight">
+    <thead>
       <tr>
-        <td><%= step_counter.date.strftime('%d') %></td>
-        <td><%= step_counter.date.strftime('%H:%M') %></td>
-
-        <td>
-          <div class="chip">
-            <%= picture_kind(step_counter.kind) %>
-          </div>
-        </td>
-        <td><%= step_counter.pressure %></td>
+        <th>Data</th>
+        <th>Tipo</th>
+        <th>Peso (Aproximado)</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% @step_counters.each do |step_counter| %>
+        <tr>
+          <td><%= l step_counter.date, format: :short %></td>
+
+          <td>
+            <div class="chip">
+              <%= picture_kind(step_counter.kind) %>
+            </div>
+          </td>
+          <td><%= step_counter.pressure %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 
 <nav>
   <div class="nav-wrapper">
@@ -123,11 +121,15 @@
         <div class="col s6 offset">
           <br/>
           <div class="logo_inventto">
-            <a href="http://invent.to/"><img src="/assets/inventto_new_black.png"></a>
+            <a href="http://invent.to/">
+              <%= image_tag 'inventto_new_black.png' %>
+            </a>
           </div>
           <br/>
           <div class="logo_unisep">
-            <a href="http://www.unisep.edu.br/abertura.php"><img src="/assets/unisep_logo_black.png"></a>
+            <a href="http://www.unisep.edu.br/abertura.php">
+              <%= image_tag 'unisep_logo_black.png' %>
+            </a>
           </div>
         </div>
       </div>

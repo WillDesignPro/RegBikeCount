@@ -1,8 +1,6 @@
 class StepCountersController < ApplicationController
   def index
     @step_counters = StepCounter.all
-
-    respond_with(@step_counters)
   end
 
   def save
