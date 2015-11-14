@@ -1,32 +1,30 @@
 class StepCounterService
+  attr_accessor :pressure_kpa
+
   def initialize(pressure)
-
+    @pressure_kpa = pressure.to_i
   end
 
-  def regbikecount
-    step_counter = StepCounter.new
-
-    resultado = params[:teste].match(/(\d{10})(\d{2}.\d)(\d)(\d)/)
-    resu = Time.at(resultado[1].to_i)
-    step_counter.date = Time.new
-    step_counter.speed = resultado[2]
-    step_counter.kind = resultado[3]
-
-    step_counter.pressure = calculo_peso(resultado[4])
-    step_counter.save
-
-    redirect_to "/step_counters"
+  def save
+    StepCounter.create(date: Time.new, pressure: calculate_height, kind: calculate_kind)
   end
 
-  def calculo_peso resultado
-    pressao_kpa = resultado
-    pressao_pascal = 0
-    pressao_newtons = 0.0
-    peso_kg = 0.0
+  private
+
+  def calculate_kind
+    if pressure_kpa > 300 && pressure_kpa <= 400
+      0
+    elsif pressure_kpa > 400 && pressure_kpa < 600
+      1
+    end
+  end
+
+  def calculate_height
     const = 9.806
 
-    pressao_pascal = pressao_kpa * 0.001
-    pressao_newtons = pressao_pascal * 2.4
-    peso_kg = pressao_newtons.to_s + const.to_s
+    pressure_pascal = pressure_kpa * 0.001
+    pressure_newtons = pressure_pascal * 2.4
+
+    pressure_newtons + const
   end
 end

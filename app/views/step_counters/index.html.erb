@@ -1,73 +1,58 @@
-<p id="notice"><%= notice %></p>
+<p id="notice">
+  <%= notice %>
+</p>
 
-  <nav>
-    <div class="nav-wrapper">
-        <nav class="deep-purple">
+<nav>
+  <div class="nav-wrapper">
+    <div class="deep-purple">
       <a href="#" class="brand-logo center">RegBikeCount</a>
       <ul id="nav-mobile" class="left hide-on-med-and-down">
-        <li><a href="#tabela"><b>Registros</a></li>
-        <li><a href="#projeto">Projeto</a></li>
-        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#tabela"><b>Registros</b></a></li>
+        <li><a href="#projeto"><b>Projeto</b></a></li>
+        <li><a href="#sobre"><b>Sobre</b></a></li>
       </ul>
     </div>
-  </nav>
-      
+  </div>
+</nav>
+
 <table class="highlight">
-    <div class="parallax-container">
-      <div class="parallax">
-        <img src="/assets/fundo_inicial2.jpg">
-      </div>
+  <div class="parallax-container">
+    <div class="parallax">
+      <img src="/assets/fundo_inicial2.jpg">
     </div>
+  </div>
   <thead>
     <tr>
       <th>Dia</th>
       <th>Hora</th>
-      <th>Velocidade (Km/h)</th>
       <th>Tipo</th>
       <th>Peso (Aproximado)</th>
     </tr>
   </thead>
 
   <tbody>
-  <br/>
-    <a name="tabela"></a>
-    <% @registrosbikecounts.each do |registrosbikecount| %>
+    <% @step_counters.each do |step_counter| %>
       <tr>
-        <td><%= registrosbikecount.dia %></td>
-        <td><%= registrosbikecount.hora %></td>
-        <td><%= registrosbikecount.velocidade%></td>
+        <td><%= step_counter.date.strftime('%d') %></td>
+        <td><%= step_counter.date.strftime('%H:%M') %></td>
 
-        <% if registrosbikecount.tipo == 0 %>
-            <td>
-              <div class="chip">
-                <img src="/assets/pedestre.png">
-              </div>
-            </td> 
-         <% else %>
-           <td>
-              <div class="chip">
-                <img src="/assets/ciclista.png">
-              </div>
-            </td> 
-         <%end%>
-        <td><%= registrosbikecount.pressao %></td>
-        <!--
-        #<td><%= link_to 'Show', registrosbikecount %></td>
-        #<td><%= link_to 'Edit', edit_registrosbikecount_path(registrosbikecount) %></td> -->
-        <td><%= link_to 'Destroy', registrosbikecount, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <td>
+          <div class="chip">
+            <%= picture_kind(step_counter.kind) %>
+          </div>
         </td>
+        <td><%= step_counter.pressure %></td>
       </tr>
-    <% end %>    
+    <% end %>
+  </tbody>
 </table>
 
-<br/>
-<br/> 
-
 <nav>
-   <div class="nav-wrapper">
-       <nav class="deep-purple">
-        <a href="#" class="brand-logo Left">Projeto...</a>
-        <a name="projeto"></a>
+  <div class="nav-wrapper">
+    <div class="deep-purple">
+      <a href="#" class="brand-logo Left">Projeto...</a>
+      <a name="projeto"></a>
+    </div>
   </div>
 </nav>
 
@@ -75,86 +60,77 @@
 <div class="parallax-container">
   <div class="parallax">
     <div class="apresentation-group-project">
-        <div class="row">
-            <div class="col s6 offset">
-            <p>
+      <div class="row">
+        <div class="col s6 offset">
+          <p>
+            <br/>
+            <b>
+              O projeto surgiu pela Inventto, e está servindo como projeto de estágio para mim (Will).
               <br/>
-              <b>
-                O projeto surgiu pela Inventto, e está servindo como projeto de estágio para mim (Will).
-              <br/> 
-                Espero que essa aplicação seja muito útil a você que está fazendo uso, espero que possa aproveitar ao máximo e desfrutar do resultado de todo o esforço e estudo que eu e o pessoal da Inventto investimos nesse trabalho.  
+              Espero que essa aplicação seja muito útil a você que está fazendo uso, espero que possa aproveitar ao máximo e desfrutar do resultado de todo o esforço e estudo que eu e o pessoal da Inventto investimos nesse trabalho.
               <br/>
               <br/>
-                Com a missão de lhe fornecer informações sobre o uso das ciclovias e demonstrar que existe interesse em automação aqui na cidade, e que ela pode ser aplicada em qualquer lugar é que fizemos a aplicabilidade desse processo automatizado de registros de ciclistas/pedrestres.
+              Com a missão de lhe fornecer informações sobre o uso das ciclovias e demonstrar que existe interesse em automação aqui na cidade, e que ela pode ser aplicada em qualquer lugar é que fizemos a aplicabilidade desse processo automatizado de registros de ciclistas/pedrestres.
               <br/>
               Bom proveito =)
               <br/>
               <br/>
-                Willian Ribeiro Ludvig
-              </b>
-            </p>
-          </div>
-         </div>
-       </div>
+              Willian Ribeiro Ludvig
+            </b>
+          </p>
+        </div>
       </div>
     </div>
+  </div>
+</div>
 
-
-
-
-  <nav>
-    <div class="nav-wrapper">
-        <nav class="deep-purple">
-          <a href="#" class="brand-logo Left">Sobre...</a>
-          <a name="sobre"></a>
+<nav>
+  <div class="nav-wrapper">
+    <div class="deep-purple">
+      <a href="#" class="brand-logo Left">Sobre...</a>
+      <a name="sobre"></a>
     </div>
-  </nav>
+  </div>
+</nav>
 
-  <div class="parallax-container">
-    <div class="imagens">
-      <div class="apresentation-group">
-          <div class="row">
-              <div class="col s6 offset">
-              <p>
-                <b>
-                  Que tal ter um contador de bicicletas em sua cidade? <br/>
-                  Legal né?
-                <br/>
-                  Pois bem, isso é possível graças ao empreendedorismo e ao esforço de algumas pessoas.
-                <br/>
-                  Pessoas essas com foco na inovação e vontade de tornar a cidade cada vez melhor para você, que circula de bicicleta ou a pé mesmo, afinal saúde não se mede, se avalia, ou você tem ou não tem.
-                <br/>
-                  E por que não ter saúde?
-                <br/>
-                  A cada dia mais e mais pessoas circulam com carros pelas grandes cidades, e aqui em Beltrão mesmo, com isso cada vez temos mais congestionamentos, mais riscos e menos tempo.
-                <br/>
-                  Pensando nisso foram criadas as ciclovias, para que as pessoas possam desfrutar de suas atividades fisícas com mais segurança, e por que não reduzir o uso do automóvel e aumentar o uso da bicicleta?
-                <br/>
-                  Pense nisso...
-                <br/>
-                <br/>
-                  Willian Ribeiro Ludvig
-                </b>
-              </p>
-              </div>
-              <div class="col s6 offset">
+<div class="parallax-container">
+  <div class="imagens">
+    <div class="apresentation-group">
+      <div class="row">
+        <div class="col s6 offset">
+          <p>
+            <b>
+              Que tal ter um contador de bicicletas em sua cidade? <br/>
+              Legal né?
               <br/>
-              <div class="logo_inventto">
-                    <a href="http://invent.to/"><img src="/assets/inventto_new_black.png"></a>
-                </div>
-                    <br/>                
-                <div class="logo_unisep">
-                    <a href="http://www.unisep.edu.br/abertura.php"><img src="/assets/unisep_logo_black.png"></a>
-                </div>
-              </div>
+              Pois bem, isso é possível graças ao empreendedorismo e ao esforço de algumas pessoas.
+              <br/>
+              Pessoas essas com foco na inovação e vontade de tornar a cidade cada vez melhor para você, que circula de bicicleta ou a pé mesmo, afinal saúde não se mede, se avalia, ou você tem ou não tem.
+              <br/>
+              E por que não ter saúde?
+              <br/>
+              A cada dia mais e mais pessoas circulam com carros pelas grandes cidades, e aqui em Beltrão mesmo, com isso cada vez temos mais congestionamentos, mais riscos e menos tempo.
+              <br/>
+              Pensando nisso foram criadas as ciclovias, para que as pessoas possam desfrutar de suas atividades fisícas com mais segurança, e por que não reduzir o uso do automóvel e aumentar o uso da bicicleta?
+              <br/>
+              Pense nisso...
+              <br/>
+              <br/>
+              Willian Ribeiro Ludvig
+            </b>
+          </p>
+        </div>
+        <div class="col s6 offset">
+          <br/>
+          <div class="logo_inventto">
+            <a href="http://invent.to/"><img src="/assets/inventto_new_black.png"></a>
+          </div>
+          <br/>
+          <div class="logo_unisep">
+            <a href="http://www.unisep.edu.br/abertura.php"><img src="/assets/unisep_logo_black.png"></a>
           </div>
         </div>
       </div>
     </div>
-</tbody> 
-
-
-
-
-
-<!--<%= link_to 'New Registrosbikecount', new_registrosbikecount_path %>-->
+  </div>
+</div>

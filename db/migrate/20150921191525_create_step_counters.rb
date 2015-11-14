@@ -3,7 +3,6 @@ class CreateStepCounters < ActiveRecord::Migration
     create_table :step_counters do |t|
       t.datetime :date
       t.integer :kind
-      t.decimal :speed
       t.decimal :pressure
 
       t.timestamps null: false
