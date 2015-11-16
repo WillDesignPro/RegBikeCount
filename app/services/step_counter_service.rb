@@ -12,7 +12,6 @@ class StepCounterService
   private
 
   def calculate_kind
-    binding.pry
     if @pressure_kpa > 300 && @pressure_kpa <= 400
       0
     elsif @pressure_kpa > 400 && @pressure_kpa < 600
