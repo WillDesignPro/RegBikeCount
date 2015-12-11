@@ -20,11 +20,9 @@ class StepCounterService
   end
 
   def calculate_height
-    const = 9.806
+    const = 0.001
 
-    pressure_pascal = @pressure_kpa * 0.001
-    pressure_newtons = pressure_pascal * 2.4
-
-    pressure_newtons + const
+    pressure_pascal = @pressure_kpa * 0.1
+    pressure_newtons = pressure_pascal * 4.2
   end
 end
